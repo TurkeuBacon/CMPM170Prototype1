@@ -7,7 +7,6 @@ public class EnemyBase : MonoBehaviour
     public delegate void MoveDelegate(BehaviorParams behaviorParams);
     public delegate void AttackDelegate(BehaviorParams behaviorParams);
     
-    // testing commit (will remove later)
     public int health;
     public float attack, defense, speed;
     private MoveDelegate doMove;
