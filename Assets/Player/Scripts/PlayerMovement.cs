@@ -37,7 +37,13 @@ public class PlayerMovement : MonoBehaviour
     {
         // normalized: vector maintains a constant length of 1 -> prevents diagonal movement from having extra length
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
-        if (moveDirection == Vector2.zero) return;
+        if (moveDirection == Vector2.zero)
+        {
+            animator.SetBool("Moving", false);
+            return;
+        }
+
+        animator.SetBool("Moving", true);
         animator.SetFloat("MoveX", moveDirection.x);
         animator.SetFloat("MoveY", moveDirection.y);
 
