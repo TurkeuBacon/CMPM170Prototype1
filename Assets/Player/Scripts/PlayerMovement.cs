@@ -10,12 +10,16 @@ public class PlayerMovement : MonoBehaviour
     private PlayerActions actions;
     private Rigidbody2D rb2D;
     private Vector2 moveDirection;
-    private Animator animator;
+    private PlayerAnimations playerAnimations;
+    private Player player;
+
     private void Awake()
     {
+        player = GetComponent<Player>();
         actions = new PlayerActions();
         rb2D = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
+        playerAnimations = GetComponent<PlayerAnimations>();
+        
     }
    
     // Update is called once per frame
@@ -30,8 +34,12 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Move()
     {
+        if (player.Stats.Health <= 0) return;
+        
         // fixedDeltaTime ensures that movement is independent of the framerate
         rb2D.MovePosition(rb2D.position + moveDirection * (speed * Time.fixedDeltaTime));
+        
+        
     }
     private void ReadMovement()
     {
@@ -39,13 +47,12 @@ public class PlayerMovement : MonoBehaviour
         moveDirection = actions.Movement.Move.ReadValue<Vector2>().normalized;
         if (moveDirection == Vector2.zero)
         {
-            animator.SetBool("Moving", false);
+            playerAnimations.SetMoveBoolTransition(false);
             return;
         }
 
-        animator.SetBool("Moving", true);
-        animator.SetFloat("MoveX", moveDirection.x);
-        animator.SetFloat("MoveY", moveDirection.y);
+        playerAnimations.SetMoveBoolTransition(true);
+        playerAnimations.SetMoveAnimation(moveDirection);
 
     }
     private void OnEnable()

@@ -135,7 +135,10 @@ GameObject:
   - component: {fileID: 91365407}
   - component: {fileID: 91365406}
   - component: {fileID: 91365409}
+  - component: {fileID: 91365412}
   - component: {fileID: 91365405}
+  - component: {fileID: 91365410}
+  - component: {fileID: 91365411}
   m_Layer: 0
   m_Name: Player_Character
   m_TagString: Untagged
@@ -271,6 +274,44 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &91365410
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91365404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c53353c5c04c3c4baafc473e026be40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
+--- !u!114 &91365411
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91365404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfb343fca7396643b71ffc29827662f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &91365412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 91365404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8919943038b3b344293c9c4248c5b154, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
 --- !u!1 &1758132025
 GameObject:
   m_ObjectHideFlags: 0
