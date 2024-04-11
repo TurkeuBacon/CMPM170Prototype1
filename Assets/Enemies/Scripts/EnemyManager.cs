@@ -19,6 +19,7 @@ public class EnemyManager : MonoBehaviour
             
         }
     };
+
     private EnemyType[] enemyTypes;
     
     void Start()
