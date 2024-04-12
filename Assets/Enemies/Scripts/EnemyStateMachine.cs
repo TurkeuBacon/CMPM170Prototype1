@@ -83,8 +83,8 @@ public struct EnemyTransition {
 public struct EnemyStateParams {
     public EnemyBase self;
     public EnemyBase[] enemies;
-    public PlayerController player;
-    public EnemyStateParams(EnemyBase self, EnemyBase[] enemies, PlayerController player) {
+    public PlayerMovement player;
+    public EnemyStateParams(EnemyBase self, EnemyBase[] enemies, PlayerMovement player) {
         this.self = self;
         this.enemies = enemies;
         this.player = player;
