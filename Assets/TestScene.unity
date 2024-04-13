@@ -38740,7 +38740,7 @@ GameObject:
   - component: {fileID: 91365405}
   - component: {fileID: 91365410}
   - component: {fileID: 91365411}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player_Character
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47472,6 +47472,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1409816171}
+  - component: {fileID: 1409816173}
+  - component: {fileID: 1409816172}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -47495,6 +47497,35 @@ Transform:
   - {fileID: 2019568976}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1409816172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409816170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59a85d9b6121cb24ba0aa8ab69accbf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  moveRange: {x: 2, y: 2}
+--- !u!114 &1409816173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409816170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4992471efd3b0b49845cd8338430911, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initState: 
+  states: []
 --- !u!1001 &1448978365
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -49133,7 +49164,10 @@ GameObject:
   - component: {fileID: 2019568979}
   - component: {fileID: 2019568978}
   - component: {fileID: 2019568977}
-  m_Layer: 0
+  - component: {fileID: 2019568980}
+  - component: {fileID: 2019568981}
+  - component: {fileID: 2019568982}
+  m_Layer: 6
   m_Name: Enemy1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49150,7 +49184,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 1.04, y: 6.35, z: -574.17847}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1409816171}
@@ -49167,6 +49201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a85d9b6121cb24ba0aa8ab69accbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 1.5
+  wanderTime: 1
+  moveRange: {x: 2, y: 2}
 --- !u!114 &2019568978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -49179,8 +49216,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4992471efd3b0b49845cd8338430911, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initState: 
-  states: []
+  initState: Wander
+  states:
+  - ID: Wander
+    Actions:
+    - {fileID: 2019568977}
+    Transitions:
+    - Decision: {fileID: 2019568980}
+      TrueState: Chase
+      FalseState: 
+  - ID: Chase
+    Actions:
+    - {fileID: 2019568981}
+    Transitions:
+    - Decision: {fileID: 2019568980}
+      TrueState: 
+      FalseState: Wander
+    - Decision: {fileID: 2019568982}
+      TrueState: Attack
+      FalseState: 
+  - ID: Attack
+    Actions: []
+    Transitions:
+    - Decision: {fileID: 2019568982}
+      TrueState: 
+      FalseState: Chase
 --- !u!212 &2019568979
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -49233,6 +49293,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2019568980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019568975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e448f89721d22ac42a027e11d5fcf5ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 5
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
+--- !u!114 &2019568981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019568975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b81d32eaaec8344dba498ad6f772968, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chaseSpeed: 1.8
+--- !u!114 &2019568982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019568975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 075a791bfec4c1441b1ba552715aebca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackRange: 3
+  playerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!1 &2038787664
 GameObject:
   m_ObjectHideFlags: 0
