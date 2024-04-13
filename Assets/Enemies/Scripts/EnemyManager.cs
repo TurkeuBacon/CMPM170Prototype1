@@ -26,7 +26,7 @@ public class EnemyManager : MonoBehaviour
         }
         for(int i = 0; i < 10; i++) {
             Vector2 spawnLocation = new Vector2(Random.Range(-40, -20), Random.Range(15, 30));
-            spawnEnemy(Random.Range(0, enemyTypes.Length), spawnLocation);
+            //spawnEnemy(Random.Range(0, enemyTypes.Length), spawnLocation);
         }
     }
 
