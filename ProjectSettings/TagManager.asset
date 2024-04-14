@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -47,7 +48,7 @@ TagManager:
   - name: Prop
     uniqueID: 834017031
     locked: 0
-  - name: Enemies
+  - name: Enemy
     uniqueID: 755321925
     locked: 0
   - name: Player
