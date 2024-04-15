@@ -34,11 +34,12 @@ public class SelectionManager : MonoBehaviour
             {
                 print("Hit something");
                 EnemyBrain enemy = hit.collider.GetComponent<EnemyBrain>();
-                if (enemy != null)
-                {
-                    // ? just checks if it's existing first
-                    OnEnemySelectedEvent?.Invoke(enemy);
-                }
+
+                if (enemy == null) return;
+                EnemyHealth enemyHealth = enemy.GetComponent<EnemyHealth>();
+
+                if (enemyHealth.CurrentHealth <= 0f) return;
+                OnEnemySelectedEvent?.Invoke(enemy);
             }
             else
             {

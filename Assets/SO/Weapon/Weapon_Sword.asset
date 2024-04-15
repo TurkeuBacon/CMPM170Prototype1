@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76e9f1390e4a6574e9788af86fda3dd4, type: 3}
-  m_Name: PlayerStats
+  m_Script: {fileID: 11500000, guid: 216c44a19368f784ba1be5978999816e, type: 3}
+  m_Name: Weapon_Sword
   m_EditorClassIdentifier: 
-  Health: 100
-  MaxHealth: 100
+  Icon: {fileID: 21300000, guid: 2fdc79425f0a3d24fb3a954df92335a1, type: 3}
+  WeaponType: 0
+  Damage: 2
