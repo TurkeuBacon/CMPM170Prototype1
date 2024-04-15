@@ -24,6 +24,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         CurrentHealth = health;
     }
 
+
     // water weakness variables here
     public float waterDamageMultiplier = 1.5f;
     private bool isInWater = false;
@@ -52,11 +53,28 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
         else
         {
-            DamageManager.Instance.ShowDamageText(amount, transform);
+            DamageManager.Instance.ShowDamageText(totalDmg, transform);
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        // print("hit something");
+        if (other.CompareTag("Water"))
+        {
+            print("Yes water");
+            isInWater = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Water"))
+        {
+            print("No water");
+            isInWater = false;
+        }
+    }
 
 
 

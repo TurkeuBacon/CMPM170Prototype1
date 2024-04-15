@@ -32,7 +32,7 @@ public class SelectionManager : MonoBehaviour
 
             if (hit.collider != null)
             {
-                print("Hit something");
+                //print("Hit something");
                 EnemyBrain enemy = hit.collider.GetComponent<EnemyBrain>();
 
                 if (enemy == null) return;
@@ -43,7 +43,7 @@ public class SelectionManager : MonoBehaviour
             }
             else
             {
-                print("Hit nothing");
+                //print("Hit nothing");
                 OnNoSelectionEvent?.Invoke();
             }
         }
