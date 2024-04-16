@@ -2,12 +2,13 @@ using System;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
+
 public class EnemyHealth : MonoBehaviour, IDamageable
 {
     public static event Action OnEnemyDeadEvent;
     [Header("Config")]
     [SerializeField] private float health;
-
+    [SerializeField] private string enemyType;   
     public float CurrentHealth { get; private set; }
 
     private Animator animator;
@@ -26,18 +27,29 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
 
     // water weakness variables here
-    public float waterDamageMultiplier = 1.5f;
     private bool isInWater = false;
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector2 hitDirection)
     {
-        // water additional weakness damage here
+        // handle weaknesses here:
+
         float totalDmg = amount;
 
-        if (isInWater)
+        if (enemyType == "Water")
         {
-            totalDmg *= waterDamageMultiplier;
+            if (isInWater)
+            {
+                totalDmg *= 1.5f;
+            }
         }
-
+        else if (enemyType == "Direction")
+        {
+            // print(hitDirection);
+            // x: positive, y: negative - should be top
+            if (hitDirection.x > 0 && hitDirection.y < 0)
+            {
+                totalDmg *= 1.5f;
+            }
+        }
 
         CurrentHealth -= totalDmg;
         if (CurrentHealth <= 0f)
@@ -49,7 +61,6 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
 
             OnEnemyDeadEvent?.Invoke();
-
         }
         else
         {
@@ -62,7 +73,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         // print("hit something");
         if (other.CompareTag("Water"))
         {
-            print("Yes water");
+            //print("Yes water");
             isInWater = true;
         }
     }
@@ -71,7 +82,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     {
         if (other.CompareTag("Water"))
         {
-            print("No water");
+            //print("No water");
             isInWater = false;
         }
     }

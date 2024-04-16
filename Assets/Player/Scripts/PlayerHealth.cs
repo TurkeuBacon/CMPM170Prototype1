@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour, IDamageable
             PlayerDead();
         }
     }
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, Vector2 direction)
     {
         if (stats.Health <= 0f) return;
         stats.Health -= amount;

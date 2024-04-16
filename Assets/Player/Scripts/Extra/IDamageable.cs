@@ -5,5 +5,5 @@ using UnityEngine;
 // use interface here to define properties and methods (for other types)
 public interface IDamageable
 {
-    void TakeDamage(float amount);
+    void TakeDamage(float amount, Vector2 direction);
 }

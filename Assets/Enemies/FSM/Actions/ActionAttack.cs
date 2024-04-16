@@ -28,7 +28,10 @@ public class ActionAttack : FSMAction
         if (timer < 0f)
         {
             IDamageable player = enemyBrain.Player.GetComponent<IDamageable>();
-            player.TakeDamage(damage);
+
+            Vector2 direction = (enemyBrain.Player.position - transform.position).normalized;
+
+            player.TakeDamage(damage, direction);
             timer = timeBtwAttacks;
         }
     }
