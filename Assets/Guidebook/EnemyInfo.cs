@@ -6,19 +6,21 @@ using UnityEngine;
 public class EnemyInfo : MonoBehaviour
 {
 
-    public string name;
+    public string enemyName;
+    public string weakness;
     public string speed;
     public string chase;
-    public string enemy;
+    public string damage;
     public string detectionRange;
     public Sprite enemySprite;
 
-    public EnemyInfo(string name, string speed, string chase, string enemy, string detectionRange, Sprite enemySprite)
+    public EnemyInfo(string enemyName, string weakness, string speed, string chase, string damage, string detectionRange, Sprite enemySprite)
     {
-        this.name = name;
+        this.enemyName = enemyName;
+        this.weakness = weakness;
         this.speed = speed;
         this.chase = chase;
-        this.enemy = enemy;
+        this.damage = damage;
         this.detectionRange = detectionRange;
         this.enemySprite = enemySprite;
     }
