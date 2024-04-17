@@ -28,6 +28,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     // water weakness variables here
     private bool isInWater = false;
+    private bool isInStone = false;
     public void TakeDamage(float amount, Vector2 plrDirection)
     {
         // handle weaknesses here:
@@ -40,10 +41,25 @@ public class EnemyHealth : MonoBehaviour, IDamageable
                 totalDmg *= 1.5f;
             }
         }
-        else if (enemyType == "Direction")
+        else if (enemyType == "Stone")
         {
-            print(plrDirection);
+            if (isInStone)
+            {
+                totalDmg *= 1.5f;
+            }
+        }
+        else if (enemyType == "TopDirection")
+        {
+            // print(plrDirection);
             if (plrDirection.y > transform.position.y)
+            {
+                totalDmg *= 1.5f;
+            }
+        }
+        else if (enemyType == "LeftDirection")
+        {
+            // print(plrDirection);
+            if (plrDirection.x < transform.position.x)
             {
                 totalDmg *= 1.5f;
             }
@@ -74,6 +90,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             //print("Yes water");
             isInWater = true;
         }
+
+        if (other.CompareTag("Stone"))
+        {
+            //print("Yes stone");
+            isInWater = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -81,6 +103,12 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (other.CompareTag("Water"))
         {
             //print("No water");
+            isInWater = false;
+        }
+
+        if (other.CompareTag("Stone"))
+        {
+            //print("No stone");
             isInWater = false;
         }
     }

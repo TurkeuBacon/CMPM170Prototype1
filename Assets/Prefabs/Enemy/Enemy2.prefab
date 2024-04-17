@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 500
-  enemyType: Direction
+  enemyType: LeftDirection
 --- !u!95 &1414508722484219958
 Animator:
   serializedVersion: 5
