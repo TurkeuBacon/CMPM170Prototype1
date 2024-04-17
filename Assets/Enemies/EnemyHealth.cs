@@ -28,10 +28,9 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
     // water weakness variables here
     private bool isInWater = false;
-    public void TakeDamage(float amount, Vector2 hitDirection)
+    public void TakeDamage(float amount, Vector2 plrDirection)
     {
         // handle weaknesses here:
-
         float totalDmg = amount;
 
         if (enemyType == "Water")
@@ -43,9 +42,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         }
         else if (enemyType == "Direction")
         {
-            // print(hitDirection);
-            // x: positive, y: negative - should be top
-            if (hitDirection.x > 0 && hitDirection.y < 0)
+            print(plrDirection);
+            if (plrDirection.y > transform.position.y)
             {
                 totalDmg *= 1.5f;
             }

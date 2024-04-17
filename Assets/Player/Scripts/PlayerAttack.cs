@@ -64,7 +64,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (currentDistanceToEnemy <= minDistanceMeleeAttack)
         {
-            Vector2 direction = (enemyTarget.transform.position - transform.position).normalized;
+            Vector2 direction = transform.position;
             enemyTarget.GetComponent<IDamageable>().TakeDamage(1f, direction);
 
         }

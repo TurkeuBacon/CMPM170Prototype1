@@ -10,6 +10,7 @@ using UnityEngine.UIElements;
 
 public class Guidebook : MonoBehaviour
 {
+    [Header("Config")]
     [SerializeField] private bool isGuideBookVisible = true;
     public UnityEngine.UI.Image guidebookUI;
 
