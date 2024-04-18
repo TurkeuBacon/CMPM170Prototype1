@@ -87,8 +87,6 @@ public class Guidebook : MonoBehaviour
 
     private void UpdatePage()
     {
-        if (currentIndex + 1 < 0 || currentIndex + 1 >= enemyTypes.Length) return;
-
         string enemyType = enemyTypes[currentIndex];
         EnemyInfo enemyInfo = enemyInfoDictionary[enemyType];
 
@@ -115,7 +113,7 @@ public class Guidebook : MonoBehaviour
 
     public void NextPage()
     {
-        currentIndex++;
+        currentIndex += 2;
         if (currentIndex + 1 >= enemyTypes.Length)
         {
             currentIndex = 0;
@@ -125,7 +123,7 @@ public class Guidebook : MonoBehaviour
 
     public void BackPage()
     {
-        currentIndex--;
+        currentIndex -= 2;
         if (currentIndex < 0)
         {
             currentIndex = enemyTypes.Length - 1;

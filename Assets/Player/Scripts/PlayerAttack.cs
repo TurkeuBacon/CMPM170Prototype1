@@ -10,15 +10,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform[] attackPositions;
 
     private PlayerActions actions;
-    private PlayerAnimations playerAnimations;
     private EnemyBrain enemyTarget;
     // this stores the current coroutine (coroutines are methods but you can add times inside the methods so it runs asynchronously)
     private Coroutine attackCoroutine;
-    private PlayerMovement playerMovement;
 
-    private float currentAttackPosition;
+    private PlayerAnimations playerAnimations;
+    private PlayerMovement playerMovement;
+    private Transform currentAttackPosition;
 
     [Header("Melee Config")]
+    [SerializeField] private ParticleSystem slashFX;
     [SerializeField] private float minDistanceMeleeAttack;
 
     public Weapon CurrentWeapon { get; set; }
@@ -66,7 +67,6 @@ public class PlayerAttack : MonoBehaviour
         {
             Vector2 direction = transform.position;
             enemyTarget.GetComponent<IDamageable>().TakeDamage(1f, direction);
-
         }
     }
 

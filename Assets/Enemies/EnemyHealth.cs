@@ -8,7 +8,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     public static event Action OnEnemyDeadEvent;
     [Header("Config")]
     [SerializeField] private float health;
-    [SerializeField] private string enemyType;   
+    [SerializeField] private string enemyType;
+
+    [Header("FX Config")]
+    [SerializeField] private ParticleSystem slashFX;
     public float CurrentHealth { get; private set; }
 
     private Animator animator;
@@ -65,7 +68,10 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             }
         }
 
+        slashFX.Play();
+
         CurrentHealth -= totalDmg;
+
         if (CurrentHealth <= 0f)
         {
             // todo
