@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   enemyType: LeftDirection
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
   slashFX: {fileID: 2578805256057234624}
 --- !u!95 &1414508722484219958
 Animator:

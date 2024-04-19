@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   enemyType: TopDirection
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
   slashFX: {fileID: 2530664664484715317}
 --- !u!95 &7746959485617720334
 Animator:

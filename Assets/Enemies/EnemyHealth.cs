@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEditor.Build.Content;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
     [Header("Config")]
     [SerializeField] private float health;
     [SerializeField] private string enemyType;
+    [SerializeField] private PlayerStats stats;
 
     [Header("FX Config")]
     [SerializeField] private ParticleSystem slashFX;
@@ -74,6 +76,8 @@ public class EnemyHealth : MonoBehaviour, IDamageable
 
         if (CurrentHealth <= 0f)
         {
+
+            stats.Health = stats.MaxHealth;
             // todo
             animator.SetTrigger("Dead");
             enemyBrain.enabled = false;

@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   enemyType: Water
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
   slashFX: {fileID: 3496193281449303831}
 --- !u!95 &4972090422614224751
 Animator:

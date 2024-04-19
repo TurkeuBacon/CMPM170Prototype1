@@ -308,6 +308,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 15
   enemyType: Stone
+  stats: {fileID: 11400000, guid: 7a0bfcd985af381499eef8304e20395d, type: 2}
   slashFX: {fileID: 4095529559661126555}
 --- !u!95 &4972090422614224751
 Animator:
