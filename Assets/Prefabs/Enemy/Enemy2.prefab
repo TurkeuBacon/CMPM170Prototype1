@@ -147,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59a85d9b6121cb24ba0aa8ab69accbf9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 2.5
   wanderTime: 1
   moveRange: {x: 2, y: 2}
 --- !u!114 &3164827589214488842
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b81d32eaaec8344dba498ad6f772968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 1.8
+  chaseSpeed: 2
 --- !u!114 &3394524281754610985
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,7 +207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3699232511e7b7741940e770043e6654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 2
+  damage: 3
   timeBtwAttacks: 1
 --- !u!114 &5053943804299937876
 MonoBehaviour:
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e658022b80ffe48a2629eaffaf068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 15
   enemyType: LeftDirection
   slashFX: {fileID: 2578805256057234624}
 --- !u!95 &1414508722484219958

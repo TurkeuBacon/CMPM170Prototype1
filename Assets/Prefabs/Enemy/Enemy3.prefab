@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e448f89721d22ac42a027e11d5fcf5ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 5
+  range: 6
   playerMask:
     serializedVersion: 2
     m_Bits: 128
@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b81d32eaaec8344dba498ad6f772968, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseSpeed: 1.8
+  chaseSpeed: 10
 --- !u!114 &9128738299088811060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e658022b80ffe48a2629eaffaf068b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 500
+  health: 15
   enemyType: TopDirection
   slashFX: {fileID: 2530664664484715317}
 --- !u!95 &7746959485617720334
