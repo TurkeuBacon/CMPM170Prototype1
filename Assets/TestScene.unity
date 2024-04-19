@@ -39159,7 +39159,7 @@ MonoBehaviour:
   initialWeapon: {fileID: 11400000, guid: f484502f248912d45936d9b08339cadf, type: 2}
   attackPositions: []
   slashFX: {fileID: 0}
-  minDistanceMeleeAttack: 5
+  minDistanceMeleeAttack: 2.5
 --- !u!1 &116858077
 GameObject:
   m_ObjectHideFlags: 0
@@ -41761,11 +41761,11 @@ MonoBehaviour:
   damageTextTwo: {fileID: 1071062239}
   detectionRangeTextTwo: {fileID: 1609444775}
   enemyImageTwo: {fileID: 1663736618}
-  enemy1Sprite: {fileID: 21300000, guid: 609545de809572b6cb75bdd342beda80, type: 3}
-  enemy2Sprite: {fileID: 21300000, guid: e5f1e7740a1e0c613b03341f4f110d69, type: 3}
-  enemy3Sprite: {fileID: 21300000, guid: 2fdc79425f0a3d24fb3a954df92335a1, type: 3}
-  enemy4Sprite: {fileID: 21300000, guid: d0747169d4acbb6fa9cb94f5d6892679, type: 3}
-  enemy5Sprite: {fileID: 21300000, guid: 7e9f3b9b7b6bb77ea986ebb20bb3525d, type: 3}
+  enemy1Sprite: {fileID: -981165702, guid: 89b4ea5aebfc4c64296ccb4c66634ed9, type: 3}
+  enemy2Sprite: {fileID: 992770432, guid: 4c3c08df0199a414f882b58bdc950f12, type: 3}
+  enemy3Sprite: {fileID: 992770432, guid: 4c3c08df0199a414f882b58bdc950f12, type: 3}
+  enemy4Sprite: {fileID: -981165702, guid: 89b4ea5aebfc4c64296ccb4c66634ed9, type: 3}
+  enemy5Sprite: {fileID: -981165702, guid: 89b4ea5aebfc4c64296ccb4c66634ed9, type: 3}
 --- !u!1 &319488301
 GameObject:
   m_ObjectHideFlags: 0

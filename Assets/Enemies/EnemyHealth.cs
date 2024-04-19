@@ -43,14 +43,14 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         {
             if (isInWater)
             {
-                totalDmg *= 1.5f;
+                totalDmg *= 5f;
             }
         }
         else if (enemyType == "Stone")
         {
             if (isInStone)
             {
-                totalDmg *= 1.5f;
+                totalDmg *= 5f;
             }
         }
         else if (enemyType == "TopDirection")
@@ -58,7 +58,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             // print(plrDirection);
             if (plrDirection.y > transform.position.y)
             {
-                totalDmg *= 1.5f;
+                totalDmg *= 5f;
             }
         }
         else if (enemyType == "LeftDirection")
@@ -66,7 +66,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
             // print(plrDirection);
             if (plrDirection.x < transform.position.x)
             {
-                totalDmg *= 1.5f;
+                totalDmg *= 5f;
             }
         }
 
@@ -104,7 +104,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (other.CompareTag("Stone"))
         {
             //print("Yes stone");
-            isInWater = true;
+            isInStone = true;
         }
     }
 
@@ -119,7 +119,7 @@ public class EnemyHealth : MonoBehaviour, IDamageable
         if (other.CompareTag("Stone"))
         {
             //print("No stone");
-            isInWater = false;
+            isInStone = false;
         }
     }
 

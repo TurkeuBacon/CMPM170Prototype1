@@ -13,7 +13,7 @@ public class EnemyManagerNew : MonoBehaviour
         for (int i = 0; i < numEnemies; i++)
         {
             int enemyIndex = Random.Range(0, enemyPrefabs.Length);
-            SpawnEnemy(4);
+            SpawnEnemy(enemyIndex);
         }
 
     }

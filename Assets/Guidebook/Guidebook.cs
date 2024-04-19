@@ -90,7 +90,7 @@ public class Guidebook : MonoBehaviour
         enemyInfoDictionary.Add("Enemy2", new EnemyInfo("Name: Enemy2", "Weakness : Sinistrorsum", "Speed: Medium", "Chase: Slow", "Damage: High", "Detection Range: Short", enemy2Sprite));
         enemyInfoDictionary.Add("Enemy3", new EnemyInfo("Name: Enemy3", "Weakness : Summo Direcium", "Speed: Slow", "Chase: Fast", "Damage: Medium", "Detection Range: Short", enemy3Sprite));
         enemyInfoDictionary.Add("Enemy4", new EnemyInfo("Name: Enemy4", "Weakness : Lapis", "Speed: Fast", "Chase: Medium", "Damage: Small", "Detection Range: High", enemy4Sprite));
-        enemyInfoDictionary.Add("Enemy5", new EnemyInfo("Name: Enemy5", "Weakness : Lapis", "Speed: Short", "Chase: Short", "Damage: Medium", "Detection Range: Medium", enemy4Sprite));
+        enemyInfoDictionary.Add("Enemy5", new EnemyInfo("Name: Enemy5", "Weakness : Lapis", "Speed: Short", "Chase: Fast", "Damage: Medium", "Detection Range: Medium", enemy4Sprite));
 
         // Store keys from the dictionary in the enemyTypes array
         enemyTypes = new string[enemyInfoDictionary.Count];
